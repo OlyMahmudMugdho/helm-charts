@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  kube-express:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-05-28T15:10:08.509136964Z"
+    description: A Helm chart for Kubernetes
+    digest: db4a9bf366e6a80e32435b1c39b5fe13e6811570374ef0c35637a55b03f228f7
+    name: kube-express
+    type: application
+    urls:
+    - https://github.com/OlyMahmudMugdho/helm-charts/releases/download/kube-express-0.1.0/kube-express-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-28T15:10:08.509143165Z"
