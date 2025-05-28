@@ -1,0 +1,26 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.deploymentName }}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.deploymentName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.deploymentName }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.deploymentName }}
+        image: olymahmudmugdho/express-app-kubernetes:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: {{ .Values.deployment.environment.envName }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.deployment.environment.secretName }}
+              key: {{ .Values.deployment.environment.secretKey }}

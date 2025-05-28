@@ -1,0 +1,25 @@
+name: express-app
+
+deployment:
+  deploymentName: express-app
+  environment:
+    envName: MY_SECRET
+    secretName: my-secret
+    secretKey: MY_SECRET
+
+service:
+  serviceName: express-app-service
+  selector:
+    app:
+      appName: express-app
+  protocol: TCP
+  port: 80
+  type: NodePort
+
+
+secret:
+  name: my-secret
+  type: Opaque
+  data:
+    key: MY_SECRET
+    value: bXluZXdzZWNyZXR2YWx1ZQ==  # Base64 encoded value of 'mynewsecretvalue'

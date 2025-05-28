@@ -1,0 +1,3 @@
+{{ .Values.name }} app
+Run the app by running following command:
+kubectl port-forward svc/{{ .Values.service.name }} 3000:80 
